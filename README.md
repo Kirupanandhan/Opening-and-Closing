@@ -8,44 +8,52 @@ To implement Opening and Closing using Python and OpenCV.
 2. OpenCV
 ## Algorithm:
 ### Step1:
-<br>
-
+<br>Import the necessary packages
 
 ### Step2:
-<br>
+<br>Create the Text using cv2.putText
 
 ### Step3:
-<br>
+<br>Create the structuring element
 
 ### Step4:
-<br>
+<br>Use Opening operation
 
 ### Step5:
-<br>
+<br>Use Closing Operation
 
  
 ## Program:
 
 ``` Python
 # Import the necessary packages
-
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 
 
 # Create the Text using cv2.putText
+img1=np.zeros((100,500),dtype='uint8')
+font=cv2.FONT_HERSHEY_COMPLEX_SMALL
+img=cv2.putText(img1,' BHARATH ',(5,70),font,2,(255),5,cv2.LINE_AA)
+plt.imshow(img)
 
 
 
 # Create the structuring element
-
+Kernel=cv2.getStructuringElement(cv2.MORPH_CROSS,(11,11))
 
 
 # Use Opening operation
+image1=cv2.morphologyEx(im,cv2.MORPH_OPEN,Kernel)
+plt.imshow(image1)
 
 
 
 
 # Use Closing Operation
-
+image1=cv2.morphologyEx(im,cv2.MORPH_CLOSE,Kernel)
+plt.imshow(image1)
 
 
 
@@ -54,7 +62,7 @@ To implement Opening and Closing using Python and OpenCV.
 ## Output:
 
 ### Display the input Image
-<br>
+![op](./1.png)
 <br>
 <br>
 <br>
@@ -62,7 +70,7 @@ To implement Opening and Closing using Python and OpenCV.
 <br>
 
 ### Display the result of Opening
-<br>
+![op](./2.png)
 <br>
 <br>
 <br>
@@ -70,7 +78,7 @@ To implement Opening and Closing using Python and OpenCV.
 <br>
 
 ### Display the result of Closing
-<br>
+![op](./3.png)
 <br>
 <br>
 <br>
